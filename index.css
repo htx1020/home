@@ -1,0 +1,43 @@
+form {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    margin: 0 auto;
+    background-color: rgb(248, 247, 246);
+}
+
+label {
+    margin-right: 5px;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    width: 15%;
+    padding: 5px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.bg1 {
+    /* background-image: url('./picts/background.jpeg');*/
+    /* background-image: url('https://img2.baidu.com/it/u=1850493911,2433536571&fm=253&fmt=auto&app=138&f=JPEG?w=700&h=400'); */
+    /*background-image: url('https://picx.zhimg.com/80/v2-2aa2cf7f91d885950334f924e0e01c98_1440w.webp?source=1def8aca');*/
+    /*background-image: url('https://static.simpledesktops.com/uploads/desktops/2017/06/02/bg-wallpaper.png');*/
+    background-image: url('https://dyimg.bosslib.com/ev3.jpg?imageView2/1/w/1600/h/900/interlace/1/q/95');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
