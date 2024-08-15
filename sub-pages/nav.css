@@ -1,0 +1,37 @@
+/* styles.css */
+
+/* 样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 导航栏样式 */
+nav {
+  background-color: #0a89f1;
+  /* 浅蓝色 */
+  display: flex;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  font-size: medium;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+}
+
+nav a:hover {
+  background-color: #1c0df3;
+  /* 深蓝色 */
+  color: white;
+}

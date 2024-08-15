@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./base.css">
+    <title>留言板</title>
+
+</head>
+
+<body>
+    <h1>精品文档</h1>
+    <a href="https://i.csdn.net/#/user-center/collection-list?type=1">CSDN收藏</a>
+    <a href="https://mp.csdn.net/mp_download/analysis/download">CSDN积分</a>
+    <!-- 添加更多链接 -->
+    <hr>
+    <h1>上传文件</h1>
+    <form action="http://172.16.20.173:8080/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="上传">
+    </form>
+    <hr>
+
+    <h1>资料下载</h1>
+    <a href="http://172.16.20.173:8080/downloads/tools/MATLAB_R2023b.7z">MatLab安装包</a>
+
+    <hr>
+    <h1>留言板</h1>
+
+    <input type="text" id="inputText" placeholder="Enter text to send">
+    <button onclick="sendPostRequest()">留言</button>
+    <div id="response"></div>
+
+    <hr>
+
+    <div id="messages">
+        <!-- 留言内容将在这里显示 -->
+    </div>
+
+    <script>
+        function sendPostRequest() {
+            var message = document.getElementById('inputText').value;
+            var text = message;
+            console.log("Text:" + text);
+
+            fetch('http://172.16.20.173:8080/echo', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: text
+            })
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('response').innerHTML = 'Response: ' + data;
+                })
+                .catch(error => {
+                    document.getElementById('response').innerHTML = 'Error: ' + error;
+                });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Viewer</title>
+    <link rel="stylesheet" href="./sub-pages/nav.css">
+    <link rel="stylesheet" href="./sub-pages/base.css">
+    <link rel="stylesheet" href="./loader.css">
+
+    <!-- background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.93888c59f49b8fe667371b660bf14d7c?rik=raSyjPN1hsnp8A&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20180108%2f15675374c73e4841b94e5cd9b99f95d4.gif&ehk=hodFMY8yKOcqS1ezasnAMSnFokIpmffdh18TIHx%2fLJM%3d&risl=&pid=ImgRaw&r=0'); -->
+    <style>
+        body {
+            padding: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+        }
+
+        .main {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .selector {
+            justify-content: space-between;
+            align-items: left;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            margin-bottom: 20px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="https://mp.csdn.net/">CSND</a></li>
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">联系我们</a></li>
+    </nav>
+    <div class="loader">
+        <span class="col"></span>
+        <span class="col"></span>
+        <span class="col"></span>
+        <span class="col"></span>
+    </div>
+    <div id="main">
+        <div class="selector">
+            <h1 style="color: blue;">Markdown Viewer</h1>
+            <button onclick="fetchMarkdown('./note/start.md')">开始</button>
+            <button onclick="fetchMarkdown('./note/usage.md')">工具</button>
+        </div>
+
+        <div>
+            <div id="content">
+                <!-- Markdown content will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to fetch and display markdown content
+        function fetchMarkdown(url) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    // Convert markdown text to HTML
+                    const converter = new showdown.Converter();
+                    const html = converter.makeHtml(text);
+                    // Display HTML 显示在playzone容器中的markdown-content容器中
+                    tcontainer = document.getElementById('content');
+                    tcontainer.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        // Call fetchMarkdown function with the URL of your Markdown file
+        fetchMarkdown('./note/start.md');
+    </script>
+
+    <!-- Include Showdown library for Markdown to HTML conversion -->
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+</body>
+
+</html>

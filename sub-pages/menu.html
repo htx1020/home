@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>3x4 Link Matrix</title>
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./nav.css">
+    <script src="base.js">
+    </script>
+    <script>
+        var display = function () {
+            var note = processText("Xx yy Zz !~")
+            alert("Note:" + note)
+        }
+    </script>
+
+    <style>
+        .menu {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 0 auto;
+            padding: auto;
+        }
+
+        .tool {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 0 auto;
+            padding: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <p> </p>
+    <nav>
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="https://mp.csdn.net/">CSND</a></li>
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">联系我们</a></li>
+    </nav>
+    <p> </p>
+    <div class="menu">
+        <table>
+            <tr>
+                <th rowspan="3">工具集合</th>
+                <td><a href="https://www.baidu.com">百度搜索</a></td>
+                <td><a href="#">Link 2</a></td>
+                <td><a href="#">Link 3</a></td>
+                <td><a href="#">Link 4</a></td>
+            </tr>
+            <tr>
+                <td><a
+                        href="https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/contents.html">Google代码规范</a>
+                </td>
+                <td><a href="#">Link 6</a></td>
+                <td><a href="#">Link 7</a></td>
+                <td><a href="#">Link 8</a></td>
+            </tr>
+            <tr>
+                <td><a href="http://172.16.20.173:19798">我的云盘挂载</a></td>
+                <td><a href="#">Link 10</a></td>
+                <td><a href="#">Link 11</a></td>
+                <td><a href="#">Link 12</a></td>
+            </tr>
+            <tr>
+                <th rowspan="3">社区</th>
+                <td><a href="https://plantuml.com/zh/" style="color:rgb(133, 37, 37);">PlantUML</a></td>
+                <td><a href="#">Link 14</a></td>
+                <td><a href="https://pkgs.org/">pkgs.org</a></td>
+                <td><a href="https://gitee.com/sailwon/txconfig.git">Gitee</a></td>
+            </tr>
+            <tr>
+                <td><a href="#">Link 17</a></td>
+                <td><a href="#">Link 18</a></td>
+                <td><a href="#">Link 19</a></td>
+                <td><a href="https://www.runoob.com/docker/docker-mirror-acceleration.html">Docker加速</a></td>
+            </tr>
+            <tr>
+                <td><a href="http://172.16.23.76:9000/">Docker管理</a></td>
+                <td><a href="http://172.16.23.76:1180/">GitLabPrivate</a></td>
+                <td><a href="http://172.16.23.60:8080/harbor/projects/8/repositories">Harbor仓库</a></td>
+                <td><a href="#">Link 24</a></td>
+            </tr>
+            <tr>
+                <th rowspan="3">工作</th>
+                <td><a href="http://172.16.23.60:8929/">项目仓库</a></td>
+                <td><a href="http://172.16.9.110/sda_plan1a/license">PLANA仓库</a></td>
+                <td><a href="http://172.16.23.76:1080/">CICD输出物</a></td>
+                <td><a href="https://grants.nsfc.gov.cn/pmpweb/psn-index">自然科学</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="tool">
+        <p>---</p>
+        <p style="color : rgb(255, 0, 140)">主机地址:172.16.20.173 172.16.23.76</p>
+        <input type="button" value="测试1" onclick="helloWorld()"></input><br />
+        <input type="button" value="测试2" onclick="getNetTime()"></input><br />
+    </div>
+</body>
+
+</html>
